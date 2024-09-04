@@ -19,7 +19,7 @@ node {
     // ecr:ap-northeast-2:ecr-credentials은 jenkins에 등록한 AWS Credential 이름
     // BUILD_NUMBER는 Jenkins의 기본 환경 변수로 현재 Jenkins의 빌드 번호를 의미, push() 안에 있는 Jenkins 빌드 번호로 이미지 태그가 지정된 후 ecr로 push
     stage('Push image') {
-        docker.withRegistry('https://654654166929.dkr.ecr.ap-northeast-2.amazonaws.com/study-dockerimage-repo', 'ecr:ap-northeast-2:ecr-credentials') {
+        docker.withRegistry('https://654654166929.dkr.ecr.ap-northeast-2.amazonaws.com/study-dockerimage-repo', 'ecr:ap-northeast-2:ecr_user') {
             app.push("${env.BUILD_NUMBER}")
         }
     }
