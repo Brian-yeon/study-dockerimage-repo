@@ -12,7 +12,7 @@ node {
     // Dockerfile과 애플리케이션 코드를 통해 컨테이너화된 이미지를 '{aws ecr url}/{aws ecr repository name}'이라는 이름으로 이미지 빌드
     // 아래의 Push image 단계에서 이미지 태그 설정
     stage('Build image') {
-       app = docker.build("{aws ecr url}")
+       app = docker.build("https://654654166929.dkr.ecr.ap-northeast-2.amazonaws.com/study-dockerimage-repo")
     }
 
     // 사용자 정의 Docker Registry를 사용하려면 withRegistry() 사용 필요
